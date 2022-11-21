@@ -7,6 +7,13 @@ class ForthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final name = PersonInherited.of(context)!.person;
-    return Text(name.name);
+
+    // It can also be written this way. the former is a static method wrapper around the later.
+    // final name =
+    //     context.dependOnInheritedWidgetOfExactType<PersonInherited>()!.person;
+    return Text(
+      name.name,
+      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+    );
   }
 }
